@@ -11,15 +11,15 @@
 |
 */
 
-/*Route::get('/', function () {  // A laravel 5.1.9 retornem directament la vista
+/*Route::get('/', function () {  // A laravel podem retornar directament la vista amb el seu nom (i ruta si està en subcarpeta dins de views)
     return view('welcome');
 });*/
 
-/*Route::get('/', function () {  
- return view('landing');
-});
-*/
 
-Route::get('/', 'WelcomeController@index'); // tal i com surt als laracasts, invocant controlador i acció
-//Route::get('/', 'Auth\AuthController@validator'); // Compte: contrabarra per entrar a folders!
-//
+Route::get('/', 'WelcomeController@index'); // Cridem a pàgina estàtica tal i com surt als laracasts, invocant controlador i acció
+
+// Model Controlador-Vista simple que passa variables
+Route::get('about', 'PagesController@about');
+
+// Model Controlador-Vista que passa variables i utilitza plantilla app.blade.php per generar la vista 
+Route::get('contact', 'PagesController@contact');
