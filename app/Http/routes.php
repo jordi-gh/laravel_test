@@ -15,6 +15,8 @@
     return view('welcome');
 });*/
 
+// Per comprovar entorn PHP
+Route::get('testPHP', 'PagesController@testPHP');
 
 Route::get('/', 'WelcomeController@index'); // Cridem a pàgina estàtica tal i com surt als laracasts, invocant controlador i acció
 

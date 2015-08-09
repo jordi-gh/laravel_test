@@ -44,4 +44,9 @@ class PagesController extends Controller
 		// Aquí utilitzarem barra com a separadir de carpetes, per variar ;)
 		return view('pages/contact', $aValors);
 	}
+	
+	public function testPHP()
+	{
+		return phpinfo();
+	}
 }
