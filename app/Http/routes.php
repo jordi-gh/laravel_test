@@ -25,3 +25,6 @@ Route::get('about', 'PagesController@about');
 
 // Model Controlador-Vista que passa variables i utilitza plantilla app.blade.php per generar la vista 
 Route::get('contact', 'PagesController@contact');
+
+// Exemple d'accedir a la BD utilitzant model, buscar un registre i modificar-lo
+Route::get('modeltest', 'PagesController@modeltest');

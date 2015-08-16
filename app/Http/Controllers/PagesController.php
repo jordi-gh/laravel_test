@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App; // Si no no trobarà la classe User.php, hem d'afegir el seu namespace 
 
 class PagesController extends Controller
 {
@@ -48,5 +48,24 @@ class PagesController extends Controller
 	public function testPHP()
 	{
 		return phpinfo();
+	}
+	
+	public function modeltest()
+	{
+		// Funció patranya per veure com buscar un registre, modificar-lo i gravar-lo a la BD
+		
+		//$user= new App\User;  // Si volguessim crear un de nou en comptes de modificar ;)
+		$user = App\User::find(1); // Si no especifiquem res estem buscant per defecte per camp 'id'
+		
+		$name = $user->first_name;
+		$changedname = $name.'P';
+		
+		$user->first_name = $changedname;
+		if ($user->save()) {
+			$aNousValors = App\user::all()->toArray();
+			return 'User name Marc updated OK!<br><br>'.print_r($aNousValors,1);
+		}
+		
+	
 	}
 }
