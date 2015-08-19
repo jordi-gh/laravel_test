@@ -28,3 +28,9 @@ Route::get('contact', 'PagesController@contact');
 
 // Exemple d'accedir a la BD utilitzant model, buscar un registre i modificar-lo
 Route::get('modeltest', 'PagesController@modeltest');
+
+// Exemple d'accedir a la BD utilitzant model, (Lectura)
+Route::get('modelreadtest', 'PagesController@modelreadtest');
+
+// Exemple d'accedir a la BD (Users) utilitzant model, (Lectura)
+Route::get('users', 'PagesController@asdf');
